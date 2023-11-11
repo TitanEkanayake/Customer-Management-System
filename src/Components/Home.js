@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { failRequest, makeRequest, setUserIdAction } from "../Redux/Action";
 import axios from "axios";
 import { toast } from "react-toastify";
+import { setUserId } from "../Redux/userSlice";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -30,12 +31,12 @@ const Home = () => {
 
       if (adminUser) {
         userId = adminUser.id;
-        dispatch(setUserIdAction(userId));
-        navigate("/user/" + adminUser.id);
+        dispatch(setUserId(userId));
+        navigate("/user");
       } else if (loggedInUser) {
         userId = loggedInUser.id;
-        dispatch(setUserIdAction(userId));
-        navigate("/staffuserlist/" + loggedInUser.id);
+        dispatch(setUserId(userId));
+        navigate("/staffuserlist");
       } else {
         toast.error("Invalid email or password. Please try again.", {
           position: toast.POSITION.TOP_CENTER,

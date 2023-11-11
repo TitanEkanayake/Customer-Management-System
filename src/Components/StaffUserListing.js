@@ -3,18 +3,21 @@ import { connect } from "react-redux";
 import { FetchLoggedinUserObj, FetchUserList } from "../Redux/Action";
 import { useNavigate, useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
+import { selectUserId } from "../Redux/userSlice";
 const StaffUserListing = (props) => {
   const navigate = useNavigate();
-  const { id } = useParams();
+  const userId = useSelector(selectUserId);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    props.loaduser();
-  }, []);
-  const userobj = useSelector((state) => state.user.userId);
-  useEffect(() => {
-    dispatch(FetchLoggedinUserObj(id));
-  }, [id]);
+    // Load customer list
+    props.loadcustomers();
+
+    // Fetch user data based on userId
+    if (userId) {
+      dispatch(FetchLoggedinUserObj(userId));
+    }
+  }, [userId]);
 
   const handleAddUser = () => {
     navigate("/user/add");
@@ -38,7 +41,7 @@ const StaffUserListing = (props) => {
           >
             Add User [+]
           </button>
-          <h1>Welcome, {userobj.name}!</h1>
+          <h1>Welcome, {props.user.userobj.name}!</h1>
         </div>
         <table className="w-full text-sm text-left text-gray-500">
           <thead className="text-xs text-gray-700 uppercase bg-gray-50">
@@ -89,7 +92,7 @@ const mapStateToProps = (state) => {
 };
 const mapDispatchToProps = (dispatch) => {
   return {
-    loaduser: () => dispatch(FetchUserList()),
+    loadcustomers: () => dispatch(FetchUserList()),
     // removeuser: (code) => dispatch(Removeuser(code)),
   };
 };

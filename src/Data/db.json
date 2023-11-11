@@ -27,19 +27,32 @@
   ],
   "customers": [
     {
-      "name": "Hello",
-      "email": "hello@gmail.com",
-      "password": "123",
-      "phone": "12432423",
-      "role": "admin",
-      "id": 1
-    },
-    {
       "name": "titan",
-      "email": "titan@gmail.com",
-      "phone": "213213",
+      "email": "t@gmail.com",
+      "phone": "123123",
       "role": "staff",
       "id": 2
+    },
+    {
+      "name": "nimal",
+      "email": "n@gmail.com",
+      "phone": "123123",
+      "role": "staff",
+      "id": 3
+    },
+    {
+      "name": "nimal",
+      "email": "Ss@gmail.com",
+      "phone": "123",
+      "role": "staff",
+      "id": 4
+    },
+    {
+      "name": "nimal",
+      "email": "n@gmail.com",
+      "phone": "21312",
+      "role": "staff",
+      "id": 5
     }
   ]
 }

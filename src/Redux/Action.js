@@ -9,8 +9,6 @@ import {
   GET_USER_OBJ,
   MAKE_REQUEST,
   UPDATE_USER,
-  GET_USER_LOGIN_OBJ,
-  SET_USER_ID,
 } from "./ActionType";
 
 export const makeRequest = () => {
@@ -49,18 +47,6 @@ export const getUserObj = (data) => {
   return {
     type: GET_USER_OBJ,
     payload: data,
-  };
-};
-export const getUserLoginObj = (data) => {
-  return {
-    type: GET_USER_LOGIN_OBJ,
-    payload: data,
-  };
-};
-export const setUserId = (userId) => {
-  return {
-    type: SET_USER_ID,
-    payload: userId,
   };
 };
 
@@ -144,12 +130,6 @@ export const FetchLoggedinUserObj = (id) => {
     } catch (err) {
       dispatch(failRequest(err.message));
     }
-  };
-};
-
-export const setUserIdAction = (userId) => {
-  return (dispatch) => {
-    dispatch(setUserId(userId));
   };
 };
 

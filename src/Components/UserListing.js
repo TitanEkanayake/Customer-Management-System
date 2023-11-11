@@ -2,39 +2,50 @@ import { useEffect } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
-import { FetchUserList, Removeuser, setUserIdAction } from "../Redux/Action";
-import { useNavigate, useParams } from "react-router-dom";
+import {
+  FetchLoggedinUserObj,
+  FetchUserList,
+  Removeuser,
+} from "../Redux/Action";
+import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
+import { selectUserId } from "../Redux/userSlice";
+
 const Userlisting = (props) => {
   const navigate = useNavigate();
-  const { id } = useParams();
+  const userId = useSelector(selectUserId);
   const dispatch = useDispatch();
-  const userId = useSelector((state) => state.user.userId);
-  console.log("user Id is -:", userId);
 
   useEffect(() => {
     // Load customer list
     props.loadcustomers();
-  }, []);
+
+    // Fetch user data based on userId
+    if (userId) {
+      dispatch(FetchLoggedinUserObj(userId));
+    }
+  }, [userId]);
 
   const handledelete = (e, code) => {
-    e.preventDefault();
     if (window.confirm("Do you want to remove?")) {
+      e.preventDefault();
       props.removeuser(code);
       props.loadcustomers();
+      props.fetchUserObj(userId);
       toast.success("User removed successfully.");
     }
   };
+
   const handleAddUser = () => {
     // Navigate to the "/user" route
+
     navigate("/user/add");
   };
-  // const userobj = useSelector((state) => state.user.userobj);
-  // const loggedId = userobj.id;
-  // console.log("user object is -:" + loggedId);
+
   // useEffect(() => {
-  //   dispatch(FetchLoggedinUserObj(id));
-  // }, [id]);
+  //   dispatch(FetchLoggedinUserObj(userId));
+  // }, [userId]);
+  // console.log("userobj is" + userobj);
 
   return props.user.loading ? (
     <div>
@@ -55,7 +66,7 @@ const Userlisting = (props) => {
           >
             Add User [+]
           </button>
-          {/* <h1>Welcome, {userobj.name}!</h1> */}
+          <h1>Welcome, {props.user.userobj.name}!</h1>
         </div>
         <table className="w-full text-sm text-left text-gray-500">
           <thead className="text-xs text-gray-700 uppercase bg-gray-50">
@@ -134,6 +145,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     loadcustomers: () => dispatch(FetchUserList()),
     removeuser: (code) => dispatch(Removeuser(code)),
+    fetchUserObj: (id) => dispatch(FetchLoggedinUserObj(id)),
   };
 };
 

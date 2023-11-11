@@ -6,7 +6,6 @@ import {
   GET_USER_OBJ,
   MAKE_REQUEST,
   UPDATE_USER,
-  SET_USER_ID,
 } from "./ActionType";
 
 const initialstate = {
@@ -58,11 +57,6 @@ export const Reducer = (state = initialstate, action) => {
         ...state,
         loading: false,
         userobj: action.payload,
-      };
-    case SET_USER_ID:
-      return {
-        ...state,
-        userId: action.payload,
       };
     default:
       return state;

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { FunctionAddUser } from "../Redux/Action";
-
+import { selectUserId } from "../Redux/userSlice";
 const AddUser = () => {
   const [name, namechange] = useState("");
   const [email, emailchange] = useState("");
@@ -10,8 +10,11 @@ const AddUser = () => {
   const [role, rolechange] = useState("staff");
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const userId = useSelector((state) => state.user.userId);
-  console.log("User Id is -:", userId);
+  const userId = useSelector(selectUserId);
+  console.log(userId);
+
+  // const userRole = dispatch(FetchLoggedinUserObj(userId));
+  // console.log(userRole);
 
   const handlesubmit = (e) => {
     e.preventDefault();
