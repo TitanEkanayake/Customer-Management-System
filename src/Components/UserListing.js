@@ -113,7 +113,7 @@ const Userlisting = (props) => {
                 Phone
               </th>
               <th scope="col" className="px-6 py-3">
-                Role
+                Gender
               </th>
               <th scope="col" className="px-6 py-3">
                 Action
@@ -132,7 +132,7 @@ const Userlisting = (props) => {
                 <td className="px-6 py-4">{item.name}</td>
                 <td className="px-6 py-4">{item.email}</td>
                 <td className="px-6 py-4">{item.phone}</td>
-                <td className="px-6 py-4">{item.role}</td>
+                <td className="px-6 py-4">{item.gender}</td>
                 <td className="px-6 py-4">
                   <button
                     type="button"

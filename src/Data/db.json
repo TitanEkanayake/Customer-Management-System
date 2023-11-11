@@ -5,7 +5,7 @@
       "email": "titan@gmail.com",
       "password": "123",
       "pnumber": "1232",
-      "role": "staff",
+      "role": "admin",
       "id": 1
     },
     {
@@ -35,53 +35,144 @@
   ],
   "customers": [
     {
+      "id": 1,
+      "name": "Sam",
+      "email": "sam@gmail.com",
+      "phone": "+94 75 2341 324",
+      "gender": "male"
+    },
+    {
       "id": 2,
-      "name": "titann",
-      "email": "t@gmail.com",
-      "phone": "123123",
-      "role": "staff"
+      "name": "Alex",
+      "email": "alex@gmail.com",
+      "phone": "+94 76 1234 567",
+      "gender": "male"
     },
     {
-      "name": "nimal",
-      "email": "n@gmail.com",
-      "phone": "21312",
-      "role": "staff",
-      "id": 5
+      "id": 3,
+      "name": "Emily",
+      "email": "emily@gmail.com",
+      "phone": "+94 77 9876 543",
+      "gender": "female"
     },
     {
-      "name": "jhon",
-      "email": "J@gmail.com",
-      "phone": "123213",
-      "role": "staff",
-      "id": 6
+      "id": 4,
+      "name": "Daniel",
+      "email": "daniel@gmail.com",
+      "phone": "+94 78 6543 210",
+      "gender": "male"
     },
     {
-      "name": "user",
-      "email": "user@gmail.com",
-      "phone": "123213",
-      "role": "staff",
-      "id": 7
+      "id": 5,
+      "name": "Sophia",
+      "email": "sophia@gmail.com",
+      "phone": "+94 79 8765 432",
+      "gender": "female"
     },
     {
-      "name": "user",
-      "email": "user@gmail.com",
-      "phone": "123",
-      "role": "staff",
-      "id": 8
+      "id": 6,
+      "name": "Mia",
+      "email": "mia@gmail.com",
+      "phone": "+94 71 2345 678",
+      "gender": "female"
     },
     {
-      "name": "kelly",
-      "email": "kelly@gmail.com",
-      "phone": "12321",
-      "role": "staff",
-      "id": 9
+      "id": 7,
+      "name": "Ethan",
+      "email": "ethan@gmail.com",
+      "phone": "+94 72 8765 432",
+      "gender": "male"
     },
     {
-      "name": "new",
-      "email": "new@gmail.com",
-      "phone": "234324",
-      "role": "staff",
-      "id": 10
+      "id": 8,
+      "name": "Ava",
+      "email": "ava@gmail.com",
+      "phone": "+94 73 1234 567",
+      "gender": "female"
+    },
+    {
+      "id": 9,
+      "name": "Liam",
+      "email": "liam@gmail.com",
+      "phone": "+94 74 5678 901",
+      "gender": "male"
+    },
+    {
+      "id": 10,
+      "name": "Olivia",
+      "email": "olivia@gmail.com",
+      "phone": "+94 75 1234 567",
+      "gender": "female"
+    },
+    {
+      "id": 11,
+      "name": "Noah",
+      "email": "noah@gmail.com",
+      "phone": "+94 76 8765 432",
+      "gender": "male"
+    },
+    {
+      "id": 12,
+      "name": "Emma",
+      "email": "emma@gmail.com",
+      "phone": "+94 77 2345 678",
+      "gender": "female"
+    },
+    {
+      "id": 13,
+      "name": "Jackson",
+      "email": "jackson@gmail.com",
+      "phone": "+94 78 8765 432",
+      "gender": "male"
+    },
+    {
+      "id": 14,
+      "name": "Avery",
+      "email": "avery@gmail.com",
+      "phone": "+94 79 1234 567",
+      "gender": "female"
+    },
+    {
+      "id": 15,
+      "name": "Lucas",
+      "email": "lucas@gmail.com",
+      "phone": "+94 71 5678 901",
+      "gender": "male"
+    },
+    {
+      "id": 16,
+      "name": "Isabella",
+      "email": "isabella@gmail.com",
+      "phone": "+94 72 1234 567",
+      "gender": "female"
+    },
+    {
+      "id": 17,
+      "name": "Liam",
+      "email": "liam@gmail.com",
+      "phone": "+94 73 5678 901",
+      "gender": "male"
+    },
+    {
+      "id": 18,
+      "name": "Aria",
+      "email": "aria@gmail.com",
+      "phone": "+94 74 1234 567",
+      "gender": "female"
+    },
+    {
+      "id": 19,
+      "name": "Elijah",
+      "email": "elijah@gmail.com",
+      "phone": "+94 75 5678 901",
+      "gender": "male"
+    },
+    {
+      "id": 20,
+      "name": "Amelia",
+      "email": "amelia@gmail.com",
+      "phone": "+94 76 1234 567",
+      "gender": "female"
     }
   ]
 }

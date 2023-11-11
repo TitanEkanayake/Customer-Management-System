@@ -96,7 +96,7 @@ const StaffUserListing = (props) => {
                 Phone
               </th>
               <th scope="col" className="px-6 py-3">
-                Role
+                Gender
               </th>
             </tr>
           </thead>
@@ -112,7 +112,7 @@ const StaffUserListing = (props) => {
                 <td className="px-6 py-4">{item.name}</td>
                 <td className="px-6 py-4">{item.email}</td>
                 <td className="px-6 py-4">{item.phone}</td>
-                <td className="px-6 py-4">{item.role}</td>
+                <td className="px-6 py-4">{item.gender}</td>
               </tr>
             ))}
           </tbody>
