@@ -1,6 +1,6 @@
 import axios from "axios";
 import { toast } from "react-toastify";
-// import UpdateUser from "../Components/UpdateUser";
+
 import {
   ADD_USER,
   DELETE_USER,
@@ -139,32 +139,3 @@ export const FetchLoggedinUserObj = (id) => {
     }
   };
 };
-
-// export const FunctionSignup = (data) => {
-//   return async (dispatch) => {
-//     dispatch(makeRequest());
-
-//     try {
-//       await axios.post("http://localhost:8000/users", data);
-//       dispatch(signupUser());
-
-//       toast.success("Signup successful.");
-//     } catch (err) {
-//       dispatch(failRequest(err.message));
-//     }
-//   };
-// };
-
-// export const FunctionLogin = () => {
-//   return async (dispatch) => {
-//     dispatch(makeRequest());
-
-//     try {
-//       const response = await axios.get("http://localhost:8000/users");
-//       const data = response.data;
-//       dispatch(loginUser(data));
-//     } catch (error) {
-//       dispatch(failRequest(error.message));
-//     }
-//   };
-// };

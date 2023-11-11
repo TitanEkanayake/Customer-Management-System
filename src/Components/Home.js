@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { failRequest, makeRequest, setUserIdAction } from "../Redux/Action";
+import { failRequest, makeRequest } from "../Redux/Action";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { setUserId } from "../Redux/userSlice";
