@@ -1,0 +1,45 @@
+{
+  "users": [
+    {
+      "name": "titan",
+      "email": "titan@gmail.com",
+      "password": "123",
+      "pnumber": "1232",
+      "role": "staff",
+      "id": 1
+    },
+    {
+      "name": "admin",
+      "email": "admin@gmail.com",
+      "password": "123",
+      "pnumber": "1234",
+      "role": "admin",
+      "id": 2
+    },
+    {
+      "name": "user",
+      "email": "user@gmail.com",
+      "password": "123",
+      "pnumber": "1235",
+      "role": "staff",
+      "id": 3
+    }
+  ],
+  "customers": [
+    {
+      "name": "Hello",
+      "email": "hello@gmail.com",
+      "password": "123",
+      "phone": "12432423",
+      "role": "admin",
+      "id": 1
+    },
+    {
+      "name": "titan",
+      "email": "titan@gmail.com",
+      "phone": "213213",
+      "role": "staff",
+      "id": 2
+    }
+  ]
+}
