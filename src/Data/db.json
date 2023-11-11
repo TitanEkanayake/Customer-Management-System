@@ -68,6 +68,20 @@
       "phone": "123",
       "role": "staff",
       "id": 8
+    },
+    {
+      "name": "kelly",
+      "email": "kelly@gmail.com",
+      "phone": "12321",
+      "role": "staff",
+      "id": 9
+    },
+    {
+      "name": "new",
+      "email": "new@gmail.com",
+      "phone": "234324",
+      "role": "staff",
+      "id": 10
     }
   ]
 }
