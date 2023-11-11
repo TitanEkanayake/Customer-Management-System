@@ -1,8 +1,8 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
-import { FunctionAddUser } from "../Redux/Action";
-import { selectUserId } from "../Redux/userSlice";
+import { FetchLoggedinUserObj, FunctionAddUser } from "../Redux/Action";
+import { selectUserId, selectUserObj } from "../Redux/userSlice";
 const AddUser = () => {
   const [name, namechange] = useState("");
   const [email, emailchange] = useState("");
@@ -11,16 +11,25 @@ const AddUser = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const userId = useSelector(selectUserId);
+  const loggedUserObj = useSelector(selectUserObj);
+
   console.log(userId);
 
-  // const userRole = dispatch(FetchLoggedinUserObj(userId));
-  // console.log(userRole);
+  useEffect(() => {
+    if (userId) {
+      dispatch(FetchLoggedinUserObj(userId));
+    }
+  }, [userId, dispatch]);
 
   const handlesubmit = (e) => {
     e.preventDefault();
     const userobj = { name, email, phone, role };
     dispatch(FunctionAddUser(userobj));
-    navigate("/user");
+    if (loggedUserObj && loggedUserObj.role === "admin") {
+      navigate("/user");
+    } else {
+      navigate("/staffuserlist");
+    }
   };
 
   return (

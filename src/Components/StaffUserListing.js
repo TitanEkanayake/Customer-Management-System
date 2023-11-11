@@ -3,10 +3,12 @@ import { connect } from "react-redux";
 import { FetchLoggedinUserObj, FetchUserList } from "../Redux/Action";
 import { useNavigate, useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { selectUserId } from "../Redux/userSlice";
+import { logoutUser, selectUserId, selectUserObj } from "../Redux/userSlice";
+
 const StaffUserListing = (props) => {
   const navigate = useNavigate();
   const userId = useSelector(selectUserId);
+
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -17,12 +19,20 @@ const StaffUserListing = (props) => {
     if (userId) {
       dispatch(FetchLoggedinUserObj(userId));
     }
-  }, [userId]);
+  }, [userId, dispatch]);
 
+  const userObj = useSelector(selectUserObj);
   const handleAddUser = () => {
     navigate("/user/add");
   };
-  return props.user.loading ? (
+
+  const handleLogout = () => {
+    // Dispatch the logout action
+    dispatch(logoutUser());
+    navigate("/");
+  };
+
+  return (props.user.loading && userId) || userObj === null ? (
     <div>
       <h2>Loading...</h2>
     </div>
@@ -33,15 +43,24 @@ const StaffUserListing = (props) => {
   ) : (
     <div className="flex justify-center min-h-screen bg-white">
       <div className="relative overflow-x-auto shadow-md sm:rounded-lg p-6 bg-white mt-4">
-        <div className="mb-4">
+        <div className="mb-4 flex justify-between items-center">
+          <div>
+            <button
+              type="button"
+              className="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
+              onClick={handleAddUser}
+            >
+              Add User [+]
+            </button>
+            {userObj && <h1>Welcome, {userObj.name}!</h1>}
+          </div>
           <button
             type="button"
-            className="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
-            onClick={handleAddUser}
+            onClick={handleLogout}
+            className="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900"
           >
-            Add User [+]
+            Log Out
           </button>
-          <h1>Welcome, {props.user.userobj.name}!</h1>
         </div>
         <table className="w-full text-sm text-left text-gray-500">
           <thead className="text-xs text-gray-700 uppercase bg-gray-50">

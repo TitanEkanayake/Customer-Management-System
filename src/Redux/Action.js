@@ -7,9 +7,11 @@ import {
   FAIL_REQUEST,
   GET_USER_LIST,
   GET_USER_OBJ,
+  LOGOUT_USER,
   MAKE_REQUEST,
   UPDATE_USER,
 } from "./ActionType";
+import { setUserObj } from "./userSlice";
 
 export const makeRequest = () => {
   return {
@@ -47,6 +49,11 @@ export const getUserObj = (data) => {
   return {
     type: GET_USER_OBJ,
     payload: data,
+  };
+};
+export const logoutUser = () => {
+  return {
+    type: LOGOUT_USER,
   };
 };
 
@@ -126,7 +133,7 @@ export const FetchLoggedinUserObj = (id) => {
     try {
       const res = await axios.get(`http://localhost:8000/users/${id}`);
       const userobj = res.data;
-      dispatch(getUserObj(userobj));
+      dispatch(setUserObj(userobj));
     } catch (err) {
       dispatch(failRequest(err.message));
     }

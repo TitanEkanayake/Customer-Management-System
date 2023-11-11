@@ -14,10 +14,10 @@ function App() {
   return (
     <Provider store={Store}>
       <BrowserRouter>
-        <div className="header">
+        {/* <div className="header">
           <Link to={"/"}>Home</Link>
           <Link to={"/user"}>User</Link>
-        </div>
+        </div> */}
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="/signup" element={<Signup />}></Route>

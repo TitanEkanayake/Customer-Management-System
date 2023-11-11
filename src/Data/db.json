@@ -23,29 +23,23 @@
       "pnumber": "1235",
       "role": "staff",
       "id": 3
+    },
+    {
+      "name": "my",
+      "email": "my@gmail.com",
+      "password": "123",
+      "pnumber": "234",
+      "role": "staff",
+      "id": 4
     }
   ],
   "customers": [
     {
-      "name": "titan",
+      "id": 2,
+      "name": "titann",
       "email": "t@gmail.com",
       "phone": "123123",
-      "role": "staff",
-      "id": 2
-    },
-    {
-      "name": "nimal",
-      "email": "n@gmail.com",
-      "phone": "123123",
-      "role": "staff",
-      "id": 3
-    },
-    {
-      "name": "nimal",
-      "email": "Ss@gmail.com",
-      "phone": "123",
-      "role": "staff",
-      "id": 4
+      "role": "staff"
     },
     {
       "name": "nimal",
@@ -53,6 +47,27 @@
       "phone": "21312",
       "role": "staff",
       "id": 5
+    },
+    {
+      "name": "jhon",
+      "email": "J@gmail.com",
+      "phone": "123213",
+      "role": "staff",
+      "id": 6
+    },
+    {
+      "name": "user",
+      "email": "user@gmail.com",
+      "phone": "123213",
+      "role": "staff",
+      "id": 7
+    },
+    {
+      "name": "user",
+      "email": "user@gmail.com",
+      "phone": "123",
+      "role": "staff",
+      "id": 8
     }
   ]
 }
