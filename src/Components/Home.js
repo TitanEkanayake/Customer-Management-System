@@ -16,7 +16,7 @@ const Home = () => {
     e.preventDefault();
     dispatch(makeRequest());
     try {
-      const response = await axios.get("http://localhost:8000/users");
+      const response = await axios.get("http://localhost:5000/admins");
       const users = response.data;
 
       // Check if there is a user with the provided email and password

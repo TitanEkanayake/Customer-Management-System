@@ -8,7 +8,7 @@ import { toast } from "react-toastify";
 const Signup = () => {
   const navigate = useNavigate();
   const [name, setName] = useState("");
-  const [pnumber, setPnumber] = useState("");
+  const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const role = "staff";
@@ -18,11 +18,11 @@ const Signup = () => {
     e.preventDefault();
     dispatch(makeRequest());
     try {
-      const res = await axios.post("http://localhost:8000/users", {
+      const res = await axios.post("http://localhost:5000/admins", {
         name,
         email,
         password,
-        pnumber,
+        phone,
         role,
       });
       dispatch(getUserObj(res.data));
@@ -71,17 +71,17 @@ const Signup = () => {
                 </div>
                 <div>
                   <label
-                    htmlFor="pnumber"
+                    htmlFor="phone"
                     className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                   >
                     Your Phone Number
                   </label>
                   <input
-                    type="pnumber"
-                    name="pnumber"
-                    value={pnumber}
-                    onChange={(e) => setPnumber(e.target.value)}
-                    id="pnumber"
+                    type="phone"
+                    name="phone"
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
+                    id="phone"
                     className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     placeholder="+94 -----"
                     required=""

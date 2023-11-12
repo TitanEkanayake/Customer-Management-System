@@ -131,7 +131,7 @@ export const FetchLoggedinUserObj = (id) => {
     dispatch(makeRequest());
 
     try {
-      const res = await axios.get(`http://localhost:8000/users/${id}`);
+      const res = await axios.get(`http://localhost:5000/admins/${id}`);
       const userobj = res.data;
       dispatch(setUserObj(userobj));
     } catch (err) {
