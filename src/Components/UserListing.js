@@ -28,13 +28,18 @@ const Userlisting = (props) => {
   }, [userId, dispatch]);
 
   const handledelete = (e, code) => {
-    if (window.confirm("Do you want to remove?")) {
-      e.preventDefault();
-      props.removeuser(code);
-      props.loadcustomers();
-      props.fetchUserObj(userId);
-      toast.success("User removed successfully.");
-    }
+    // if (window.confirm("Do you want to remove?")) {
+    //   e.preventDefault();
+    //   props.removeuser(code);
+    //   props.fetchUserObj(userId);
+    //   props.loadcustomers();
+    //   toast.success("User removed successfully.");
+    // }
+    e.preventDefault();
+    props.removeuser(code);
+    props.fetchUserObj(userId);
+    props.loadcustomers();
+    toast.success("User removed successfully.");
   };
   const userObj = useSelector(selectUserObj);
   const handleAddUser = () => {
