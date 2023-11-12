@@ -62,7 +62,7 @@ export const FetchUserList = () => {
     dispatch(makeRequest());
 
     try {
-      const response = await axios.get("http://localhost:8000/customers");
+      const response = await axios.get("http://localhost:5000/users");
       const userlist = response.data;
       dispatch(geUserList(userlist));
     } catch (error) {
@@ -76,7 +76,7 @@ export const Removeuser = (code) => {
     dispatch(makeRequest());
 
     try {
-      await axios.delete(`http://localhost:8000/customers/${code}`);
+      await axios.delete(`http://localhost:5000/users/${code}`);
       dispatch(deleteUser());
     } catch (err) {
       dispatch(failRequest(err.message));
@@ -89,7 +89,7 @@ export const FunctionAddUser = (data) => {
     dispatch(makeRequest());
 
     try {
-      await axios.post("http://localhost:8000/customers", data);
+      await axios.post("http://localhost:5000/users", data);
       dispatch(addUser());
 
       toast.success("User Added successfully.");
@@ -104,7 +104,7 @@ export const FunctionUpdateUser = (data, code) => {
     dispatch(makeRequest());
 
     try {
-      await axios.put(`http://localhost:8000/customers/${code}`, data);
+      await axios.patch(`http://localhost:5000/users/${code}`, data);
       dispatch(updateUser());
       toast.success("User Updated successfully.");
     } catch (err) {
@@ -118,7 +118,7 @@ export const FetchUserObj = (code) => {
     dispatch(makeRequest());
 
     try {
-      const res = await axios.get(`http://localhost:8000/customers/${code}`);
+      const res = await axios.get(`http://localhost:5000/users/${code}`);
       const userlist = res.data;
       dispatch(getUserObj(userlist));
     } catch (err) {

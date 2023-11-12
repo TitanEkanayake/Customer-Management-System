@@ -63,8 +63,8 @@ const Userlisting = (props) => {
   ) : (
     <div className="flex justify-center min-h-screen bg-white">
       <div className="relative overflow-x-auto shadow-md sm:rounded-lg p-6 bg-white mt-4">
-        <h1 class="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl">
-          <span class="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">
+        <h1 className="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">
             Customer
           </span>{" "}
           Table.

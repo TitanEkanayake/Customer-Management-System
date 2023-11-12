@@ -43,9 +43,9 @@ const Signup = () => {
         <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
           <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
             <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
-              <h1 class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
+              <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
                 Customer{" "}
-                <mark class="px-2 text-white bg-blue-600 rounded dark:bg-blue-500">
+                <mark className="px-2 text-white bg-blue-600 rounded dark:bg-blue-500">
                   Management
                 </mark>{" "}
                 Portal
